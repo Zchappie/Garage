@@ -1,3 +1,5 @@
+# MacOS ignore -------------------------------
+.DS_Store
 # c++ ignore ---------------------------------
 # Prerequisites
 *.d
