@@ -1,0 +1,108 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+ 
+\renewcommand\lstlistingname{Algorithm}
+\renewcommand\lstlistlistingname{Algorithms}
+\def\lstlistingautorefname{Alg.}
+
+\lstdefinestyle{Python}{
+    language        = Python,
+    frame           = lines, 
+    basicstyle      = \footnotesize,
+    keywordstyle    = \color{blue},
+    stringstyle     = \color{green},
+    commentstyle    = \color{red}\ttfamily
+}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{VisNav}
+\newcommand\hwnumber{2}                  % <-- homework number
+\newcommand\NetIDa{Meng Liu}           % <-- NetID of person #1
+%\newcommand\NetIDb{netid12038}           % <-- NetID of person #2 (Comment this line out for problem sets)
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\NetIDa}
+%\lhead{\NetIDa\\\NetIDb}                 % <-- Comment this line out for problem sets (make sure you are person #1)
+\chead{\textbf{\Large Exercise \hwnumber}}
+\rhead{\course \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+
+\section*{Exercise 1: Camera models}
+Test every model, whether the result of un-projection of the projection matched the original vector (which is a 3D point ($x,y \in \{-10,-9,...,0,1,..9,10\}$, $z=5$) after normalized to unit vector).
+
+%----------------------------------------------------------------------------
+\section*{Exercise 2: Optimization}
+Robust curve fitting can also deal with outliers. Outliers can have strong influence on the cost function and let the result shift from the ground truth. The robust curve fitting reduce this influence.
+
+
+%----------------------------------------------------------------------------
+\section*{Exercise 3: Camera calibration}
+\subsection*{Command line parameters}
+The command line parameters passed the user chosen functionalities to the program. For example, the GUI can be showed, one of the 4 possible camera models can be set. Also, the data path is needed.
+
+\subsection*{Summary and analysis}
+As we can see from the screen shots of the result of calibration (at frame 42), all camera models except ``pinhole" model have produced good results. The calibrated projections are perfectly aligned with the detected corners (with sub-pixel error), while pinhole model has visible mis-alignment without scaling the image. Frame 42 represents a typical situation, the distortions of cameras are clearly showed.\\
+
+\begin{figure}[h]
+ 	\begin{minipage}{0.5\textwidth}
+ 		\centering	
+		\includegraphics[width=\linewidth]{images/ph.png}
+		\caption{Pinhole camera model}
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics [width=\linewidth]{images/ds.png}
+		\caption{Double sphere camera model}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+ 	\begin{minipage}{0.5\textwidth}
+ 		\centering	
+		\includegraphics[width=\linewidth]{images/eucm.png}
+		\caption{Extended uniffied camera model}
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics [width=\linewidth]{images/kb4.png}
+		\caption{Kannala-Brandt camera model}
+	\end{minipage}
+\end{figure}
+When looking at the quantified massured performance, we can conclude:
+\begin{enumerate}
+	\item Double sphere, extended unified, Kannala-Brandt models have better initialization
+	\item Double sphere, extended unified, Kannala-Brandt models lead to better calibration result of this camera set than pinhole
+	\item Extended unified, Kannala-Brandt models use less iterartions and time to converge
+\end{enumerate}
+\begin{figure}[hbt]
+  \includegraphics[width=\textwidth]{images/table.png}
+  \caption{Calibration outputs of 4 camera models from ceres solver}
+\end{figure}
+
+%----------------------------------------------------------------------------
+\end{document}

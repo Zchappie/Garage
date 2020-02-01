@@ -1,0 +1,9 @@
+Tests:          300
+Faster:         288
+Slower:         12
+Mistakes:       0
+Timeouts:       0 with 60s timeout
+Average UNSAT:  0.148 of 156 
+Median UNSAT:   0.018 of 156 
+Average SAT:    0.027 of 144 
+Median SAT:     0.022 of 144 

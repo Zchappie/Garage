@@ -1,0 +1,5 @@
+* #variable= 3 #constraint= 2
+* This is a comment
++1 x1 +2 x2 -1 x3 >= 2;
+* There are 3 variables (x1, x2 and x3) and 2 constraints
+-2 x1 +6 x3 >= 4;

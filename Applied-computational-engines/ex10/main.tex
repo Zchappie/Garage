@@ -1,0 +1,148 @@
+\documentclass{base}
+% Dateikodierung ist utf8
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage[export]{adjustbox}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{ulem}
+\usepackage{pdfpages}
+\usepackage{ wasysym }
+\usepackage{ booktabs }
+\usepackage{lscape}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{flexisym}
+\usepackage[]{algorithm2e}
+
+\usepackage{xcolor}
+\begin{document}
+
+\Abgabeblatt{Assignment 10}{25.6.2018}{????}{????}{Yannis Rohloff (yannis@uni-bremen.de)}{Meng Liu(lium@uni-bremen.de)}{Islam Abushanab(is\_ab@uni-bremen.de)}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+}
+
+\newcounter{highlight}[page]
+\newcommand{\tikzhighlightanchor}[1]{\ensuremath{\vcenter{\hbox{\tikz[remember picture, overlay]{\coordinate (#1 highlight \arabic{highlight});}}}}}
+\newcommand{\bh}[0]{\stepcounter{highlight}\tikzhighlightanchor{begin}}
+\newcommand{\eh}[0]{\tikzhighlightanchor{end}}
+\AtBeginShipout{\AtBeginShipoutUpperLeft{\ifthenelse{\value{highlight} > 0}{\tikz[remember picture, overlay]{\foreach \stroke in {1,...,\arabic{highlight}} \draw[highlighter] (begin highlight \stroke) -- (end highlight \stroke);}}{}}}
+
+
+\section*{SMT}
+
+We model the real values of each market as the function \verb|m| and add bounds on their sizes.
+We do the same for the salespersons.
+
+After that we set constraints that enforce the minimum requirements of the salespersons.
+
+We define a function \verb|s| with two parameters such we express: \verb|s 1 0 = 0.20| if SP1 is in market 0. This is done by using the ite operator for every combination.
+
+This can then be used to sum up the percent market shares of all salesperson in one region. See function \verb|ts| (total sum).
+We can then use another function to sum the assigned values with an upper bound. This is done with the function \verb|tsc| (total sum capped).
+
+
+
+\lstinputlisting{smt.txt}
+
+With these constraints we found out that, for a total of 6.3 million sold gallons, the set of constraints is unsatisfiable.
+
+We manually build the maximum number that can be reached.
+As we want to analyze the maximum selling result, the more gallons given to the sales person who can achieve more market share, the bigger output we can get. SP0 required minimum real region market size has already reached the largest market, namely region 0's maximum. So SP0 can only be assigned to region 0. 
+The second large regions are region 1 and region 2, therefore we will fully use of this two regions. There are two ways to make the assignment, namely fully using the ``achievable market share"' or fully using the largest market.
+First, we use the second strategy by assigning sales person 1 and 3 to region 1 and sales person 2 and 4 to region 2. The total result will be:
+\[10000000*0.2 + 8000000*(0.15+0.1) + 8000000*(0.15+0.08) = 5840000\]
+The other possible assignment, namely SP0 and SP4 to region 0, SP1 and SP3 to region 1, SP2 to region 2. The result is:
+\[10000000*0.25 + 8000000*(0.15+0.1) + 8000000*0.15 = 5700000\]
+Thus, the maximum is 5.84 million gallons of paint, which means the target of 6.3 million gallons is not achievable.
+
+These calculations ignore the fact that the sum of all markets has to be 30 million. When assigning the maximum capacity to regions 0 to 2, this cannot be reached because of the minimum bounds on regions 3 and 4. So the real maximum is smaller than the previous analysis, which makes the goal even harder to achieve.
+We altered the algorithm slightly to check for 4.5 million instead. This yields the following solution with the highlighted assignments.
+\begin{lstlisting}
+sat
+(model 
+  (define-fun e () Real
+    5000000.0)                      # sum of market shares
+  (define-fun m ((x!0 Int)) Int     # real region market volumes
+    (ite (= x!0 0) 10000000
+    (ite (= x!0 1) 5000000
+    (ite (= x!0 2) 8000000
+    (ite (= x!0 3) 4000000
+    (ite (= x!0 4) 3000000
+      10000000))))))
+  (define-fun s ((x!0 Int) (x!1 Int)) Real
+    (ite (and (= x!0 0) (= x!1 0)) (/ 1.0 5.0)
+    (ite (and (= x!0 0) (= x!1 1)) 0.0
+    (ite (and (= x!0 0) (= x!1 2)) 0.0
+    (ite (and (= x!0 0) (= x!1 3)) 0.0
+    (ite (and (= x!0 0) (= x!1 4)) 0.0
+    (ite (and (= x!0 1) (= x!1 0)) 0.0
+    (ite (and (= x!0 1) (= x!1 1)) 0.0
+    (ite (and (= x!0 1) (= x!1 2)) 0.0
+    (ite (and (= x!0 1) (= x!1 3)) 0.0
+    (ite (and (= x!0 1) (= x!1 4)) (/ 2.0 25.0)
+    (ite (and (= x!0 2) (= x!1 0)) 0.0
+    (ite (and (= x!0 2) (= x!1 1)) (/ 3.0 20.0)
+    (ite (and (= x!0 2) (= x!1 2)) 0.0
+    (ite (and (= x!0 2) (= x!1 3)) (/ 1.0 10.0)
+    (ite (and (= x!0 2) (= x!1 4)) 0.0
+    (ite (and (= x!0 3) (= x!1 0)) 0.0
+    (ite (and (= x!0 3) (= x!1 1)) 0.0
+    (ite (and (= x!0 3) (= x!1 2)) (/ 3.0 20.0)
+    (ite (and (= x!0 3) (= x!1 3)) 0.0
+    (ite (and (= x!0 3) (= x!1 4)) 0.0
+    (ite (and (= x!0 4) (= x!1 0)) 0.0
+    (ite (and (= x!0 4) (= x!1 1)) 0.0
+    (ite (and (= x!0 4) (= x!1 2)) 0.0
+    (ite (and (= x!0 4) (= x!1 3)) 0.0
+    (ite (and (= x!0 4) (= x!1 4)) 0.0
+      0.0))))))))))))))))))))))))))
+  (define-fun sp ((x!0 Int)) Int        # assignment of the salespersons to the markets
+    (ite (= x!0 0) 0
+    (ite (= x!0 1) 2
+    (ite (= x!0 2) 3
+    (ite (= x!0 3) 2
+    (ite (= x!0 4) 1
+      2))))))
+  (define-fun ts ((x!0 Int)) Real
+    (ite (= x!0 0) (/ 1.0 5.0)
+    (ite (= x!0 1) (/ 2.0 25.0)
+    (ite (= x!0 2) (/ 1.0 4.0)
+    (ite (= x!0 3) (/ 3.0 20.0)
+    (ite (= x!0 4) 0.0
+      (/ 1.0 5.0)))))))
+  (define-fun tsc ((x!0 Int)) Real
+    (ite (= x!0 0) (/ 1.0 5.0)
+    (ite (= x!0 1) (/ 2.0 25.0)
+    (ite (= x!0 2) (/ 1.0 4.0)
+    (ite (= x!0 3) (/ 3.0 20.0)
+    (ite (= x!0 4) 0.0
+      (/ 1.0 5.0)))))))
+)
+\end{lstlisting}
+\end{document}

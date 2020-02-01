@@ -1,0 +1,152 @@
+\begin{longtable}{|c|c|c|c|c|c|c|}
+\hline 1 & 2 & 3 & 4 & 5 & unit propagation & optimal? \\ \hline 
+true & true & true & true & - & 5               &    \\ \hline 
+true & true & true & - & true & 4               &    \\ \hline 
+true & true & true & - & - & 4,5             &    \\ \hline 
+true & true & false & false & - & -5              &    \\ \hline 
+true & true & false & - & false & -4              &    \\ \hline 
+true & true & false & - & - & -5,-4           &    \\ \hline 
+true & true & - & true & true & 3               &    \\ \hline 
+true & true & - & true & - & 3,5             &    \\ \hline 
+true & true & - & false & false & -3              &    \\ \hline 
+true & true & - & false & - & -5,-3           &    \\ \hline 
+true & true & - & - & true & 3,4             &    \\ \hline 
+true & true & - & - & false & -4,-3           &    \\ \hline 
+true & true & - & - & - &                 &    \\ \hline 
+true & false & true & false & - & 5               &    \\ \hline 
+true & false & true & - & true & -4              &    \\ \hline 
+true & false & true & - & - & -4,5            &    \\ \hline 
+true & false & false & false & - & -5              &    \\ \hline 
+true & false & false & - & false & -4              &    \\ \hline 
+true & false & false & - & - & -5,-4           &    \\ \hline 
+true & false & - & false & true & 3               &    \\ \hline 
+true & false & - & false & false & -3              &    \\ \hline 
+true & false & - & false & - &                 &    \\ \hline 
+true & false & - & - & true & 3,-4            &    \\ \hline 
+true & false & - & - & false & -4,-3           &    \\ \hline 
+true & false & - & - & - &                 & -4 \\ \hline 
+true & - & true & true & true & 2               &    \\ \hline 
+true & - & true & true & - & 2,5             &    \\ \hline 
+true & - & true & false & true & -2              &    \\ \hline 
+true & - & true & false & - & 5,-2            &    \\ \hline 
+true & - & true & - & true &                 &    \\ \hline 
+true & - & true & - & - & 5               &    \\ \hline 
+true & - & false & false & false &                 &    \\ \hline 
+true & - & false & false & - & -5              &    \\ \hline 
+true & - & false & - & false & -4              &    \\ \hline 
+true & - & false & - & - & -5,-4           &    \\ \hline 
+true & - & - & true & true & 2,3             &    \\ \hline 
+true & - & - & true & - & 2,3,5           &    \\ \hline 
+true & - & - & false & true & 3,-2            &    \\ \hline 
+true & - & - & false & false & -3              &    \\ \hline 
+true & - & - & false & - &                 &    \\ \hline 
+true & - & - & - & true & 3               &    \\ \hline 
+true & - & - & - & false & -4,-3           &    \\ \hline 
+true & - & - & - & - &                 &    \\ \hline 
+false & true & false & true & - & -5              &    \\ \hline 
+false & true & false & false & - & -5              &    \\ \hline 
+false & true & false & - & false &                 &    \\ \hline 
+false & true & false & - & - & -5              &    \\ \hline 
+false & true & - & true & false & -3              &    \\ \hline 
+false & true & - & true & - & -5,-3           &    \\ \hline 
+false & true & - & false & false & -3              &    \\ \hline 
+false & true & - & false & - & -5,-3           &    \\ \hline 
+false & true & - & - & false & -3              &    \\ \hline 
+false & true & - & - & - & -5,-3           &    \\ \hline 
+false & false & true & true & - & -5              &    \\ \hline 
+false & false & true & false & - & -5              &    \\ \hline 
+false & false & true & - & false &                 &    \\ \hline 
+false & false & true & - & - & -5              &    \\ \hline 
+false & false & false & true & - & -5              &    \\ \hline 
+false & false & false & false & - & -5              &    \\ \hline 
+false & false & false & - & false &                 &    \\ \hline 
+false & false & false & - & - & -5              &    \\ \hline 
+false & false & - & true & false &                 &    \\ \hline 
+false & false & - & true & - & -5              &    \\ \hline 
+false & false & - & false & false &                 &    \\ \hline 
+false & false & - & false & - & -5              &    \\ \hline 
+false & false & - & - & false &                 &    \\ \hline 
+false & false & - & - & - & -5              &    \\ \hline 
+false & - & true & true & false & -2              &    \\ \hline 
+false & - & true & true & - & -5,-2           &    \\ \hline 
+false & - & true & false & false & -2              &    \\ \hline 
+false & - & true & false & - & -5,-2           &    \\ \hline 
+false & - & true & - & false & -2              &    \\ \hline 
+false & - & true & - & - & -5,-2           &    \\ \hline 
+false & - & false & true & false &                 &    \\ \hline 
+false & - & false & true & - & -5              &    \\ \hline 
+false & - & false & false & false &                 &    \\ \hline 
+false & - & false & false & - & -5              &    \\ \hline 
+false & - & false & - & false &                 &    \\ \hline 
+false & - & false & - & - & -5              &    \\ \hline 
+false & - & - & true & false &                 &    \\ \hline 
+false & - & - & true & - & -5              &    \\ \hline 
+false & - & - & false & false &                 &    \\ \hline 
+false & - & - & false & - & -5              &    \\ \hline 
+false & - & - & - & false &                 &    \\ \hline 
+false & - & - & - & - & -5              &    \\ \hline 
+- & true & true & true & true & 1               &    \\ \hline 
+- & true & true & true & - & 1,5             &    \\ \hline 
+- & true & true & - & true & 1,4             &    \\ \hline 
+- & true & true & - & - & 1,4,5           &    \\ \hline 
+- & true & false & true & false & -1              &    \\ \hline 
+- & true & false & true & - & -5,-1           &    \\ \hline 
+- & true & false & false & false &                 &    \\ \hline 
+- & true & false & false & - & -5              &    \\ \hline 
+- & true & false & - & false &                 &    \\ \hline 
+- & true & false & - & - & -5              &    \\ \hline 
+- & true & - & true & true & 1,3             &    \\ \hline 
+- & true & - & true & false & -3,-1           &    \\ \hline 
+- & true & - & true & - &                 &    \\ \hline 
+- & true & - & false & false & -3              &    \\ \hline 
+- & true & - & false & - & -5,-3           &    \\ \hline 
+- & true & - & - & true & 1,3,4           &    \\ \hline 
+- & true & - & - & false &                 & -3 \\ \hline 
+- & true & - & - & - &                 &    \\ \hline 
+- & false & true & true & false & -1              &    \\ \hline 
+- & false & true & true & - & -5,-1           &    \\ \hline 
+- & false & true & false & true & 1               &    \\ \hline 
+- & false & true & false & false & -1              &    \\ \hline 
+- & false & true & false & - &                 &    \\ \hline 
+- & false & true & - & true & 1,-4            &    \\ \hline 
+- & false & true & - & false & -1              &    \\ \hline 
+- & false & true & - & - &                 &    \\ \hline 
+- & false & false & true & false & -1              &    \\ \hline 
+- & false & false & true & - & -5,-1           &    \\ \hline 
+- & false & false & false & false &                 &    \\ \hline 
+- & false & false & false & - & -5              &    \\ \hline 
+- & false & false & - & false &                 &    \\ \hline 
+- & false & false & - & - & -5              &    \\ \hline 
+- & false & - & true & false & -1              &    \\ \hline 
+- & false & - & true & - & -5,-1           &    \\ \hline 
+- & false & - & false & true & 1,3             &    \\ \hline 
+- & false & - & false & false &                 &    \\ \hline 
+- & false & - & false & - &                 &    \\ \hline 
+- & false & - & - & true & 1,3,-4          &    \\ \hline 
+- & false & - & - & false &                 &    \\ \hline 
+- & false & - & - & - &                 &    \\ \hline 
+- & - & true & true & true & 1,2             &    \\ \hline 
+- & - & true & true & false & -2,-1           &    \\ \hline 
+- & - & true & true & - &                 &    \\ \hline 
+- & - & true & false & true & 1,-2            &    \\ \hline 
+- & - & true & false & false & -1,-2           &    \\ \hline 
+- & - & true & false & - & -2              &    \\ \hline 
+- & - & true & - & true & 1               &    \\ \hline 
+- & - & true & - & false & -2,-1           &    \\ \hline 
+- & - & true & - & - &                 &    \\ \hline 
+- & - & false & true & false & -1              &    \\ \hline 
+- & - & false & true & - & -5,-1           &    \\ \hline 
+- & - & false & false & false &                 &    \\ \hline 
+- & - & false & false & - & -5              &    \\ \hline 
+- & - & false & - & false &                 &    \\ \hline 
+- & - & false & - & - & -5              &    \\ \hline 
+- & - & - & true & true & 1,2,3           &    \\ \hline 
+- & - & - & true & false & -1              &    \\ \hline 
+- & - & - & true & - &                 &    \\ \hline 
+- & - & - & false & true & 1,3,-2          &    \\ \hline 
+- & - & - & false & false &                 &    \\ \hline 
+- & - & - & false & - &                 &    \\ \hline 
+- & - & - & - & true & 1,3             &    \\ \hline 
+- & - & - & - & false &                 &    \\ \hline 
+- & - & - & - & - &                 &    \\ \hline 
+\end{longtable}

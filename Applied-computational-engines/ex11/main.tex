@@ -1,0 +1,161 @@
+\documentclass{base}
+% Dateikodierung ist utf8
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage[export]{adjustbox}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{ulem}
+\usepackage{pdfpages}
+\usepackage{ wasysym }
+\usepackage{ booktabs }
+\usepackage{lscape}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{flexisym}
+\usepackage[]{algorithm2e}
+
+\usepackage{xcolor}
+\begin{document}
+
+\Abgabeblatt{Assignment 11}{2.7.2018}{????}{????}{Yannis Rohloff (yannis@uni-bremen.de)}{Meng Liu(lium@uni-bremen.de)}{Islam Abushanab (is\_ab@uni-bremen.de)}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+}
+
+
+
+\section*{SAT+LP}
+Give names to the ground terms first.
+
+\begin{tabular}[]{@{\hspace{-1.5cm}}ccccccccccc}
+$(x \leq 5 \lor y \geq 2)  $&$\land $ & $(x \geq 4 \lor y \leq 2) $&$ \land $        & $(x+y \geq 12)$&$ \land $  & $ (x+y \leq 14)$&$ \land $ & $ (3y-4x \leq 0)$&$\land $ & $ (3x-4y \leq 0)$ \\
+$(a \lor b)$&$ \land         $        & $ (c \lor d) $&$ \land                     $ & $ (e)$&$ \land           $ & $ (f)$&$ \land           $ & $ (g)$&$\land            $ & $ (h)$ \\
+\end{tabular}
+
+The first Alrogithm divides into multiple steps.
+(1) Unit Propagation, (2) Falsification of clauses, (3) Solve LP Problem of the true constraints and (4) Recursing with a new variable.
+
+We will now recurse through these steps.
+
+
+%Since it is hard to recognize the steps of recursion when written in a linear text we first considered only the steps (1),(2) and (4) and assumed, that no full set of terms yields a possible solution with LP.
+%We built the following table of variable combinations.
+
+
+We write $a=true$ as $a$ and $a=false$ as $\overline a$.
+The first four variables $e,f,g,h$ are always true by unit propagation in the first recursion step.
+
+The third column is step (3). This will only be executed if all terms are either included or excluded from the LP instance.
+The concrete lp-instances are listed below the table
+
+\begin{tabular}[]{|l|l|l|}
+\hline
+\textbf{A}                              & \textbf{(1) and (2)} & \textbf{(3)}\\ \hline
+$e,f,g,h$                               & unit propagation & \\ \hline
+$e,f,g,h,\overline a$                   &                  & \\ \hline
+$e,f,g,h,\overline a,b$                 & unit propagation & \\ \hline
+$e,f,g,h,\overline a,b, \overline c$    &                  & \\ \hline
+$e,f,g,h,\overline a,b, \overline c, d$ & unit propagation & infeasable\\ \hline
+$e,f,g,h,\overline a,b, c, $            &                  & \\ \hline
+$e,f,g,h,\overline a,b, c, \overline d$ &                  & solution found! x=6,y=6\\ \hline
+$e,f,g,h,\overline a,b, c, d$           &                  & -\\ \hline
+$e,f,g,h,a,$                            &                  & -\\ \hline
+$e,f,g,h,a,\overline b, \overline c$    &                  & -\\ \hline
+$e,f,g,h,a,\overline b, \overline c, d$ & unit propagation & -\\ \hline
+$e,f,g,h,a,\overline b, c$              &                  & -\\ \hline
+$e,f,g,h,a,\overline b, c, \overline d$ &                  & -\\ \hline
+$e,f,g,h,a,\overline b, c, d$           &                  & -\\ \hline
+$e,f,g,h,a, b$                          &                  & -\\ \hline
+$e,f,g,h,a, b, \overline c$             &                  & -\\ \hline
+$e,f,g,h,a, b, \overline c, d$          & unit propagation & -\\ \hline
+$e,f,g,h,a, b, c$                       &                  & -\\ \hline
+$e,f,g,h,a, b, c, \overline d$          &                  & -\\ \hline
+$e,f,g,h,a, b, c, d$                    &                  & -\\ \hline
+\end{tabular}
+
+
+\section*{Uniterpreted Functions}
+
+There are the following sub-terms:
+$$x,y,f(x), f(y), f(f(x)),g(x,x), g(x,y), g(y,x), g(f(y),y), g(f(y),f(y)), g(f(x), f(x)), g(x, g(x,y)) $$
+After merging them according to step 3 we get the following groups.
+
+\renewcommand{\c}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\begin{tabular}[]{|l|l|l|l|l|l|l|l|}
+\hline
+\c{$x$\\$f(x)$} & 
+\c{$f(f(x)) $\\$ g(x,x)$} & 
+\c{$g(f(y), y) $\\$ g(f(y),f(y))$} &
+\c{$ f(y) $\\$ g(f(x), f(x)) $} & 
+\c{$ g(x,g(x,y)) $\\$ g(y,x) $} &
+\c{$y$} & 
+\c{$g(x,y)$} 
+\\ \hline
+\end{tabular}
+
+We match: $f(f(x)) = f(f(x)) $
+
+\begin{tabular}[]{|l|l|l|l|l|l|l|l|}
+\hline
+\c{$x$\\$f(x)$ \\ $f(f(x)) $\\$ g(x,x)$} & 
+\c{$g(f(y), y) $\\$ g(f(y),f(y))$} &
+\c{$ f(y) $\\$ g(f(x), f(x)) $} & 
+\c{$ g(x,g(x,y)) $\\$ g(y,x) $} &
+\c{$y$} & 
+\c{$g(x,y)$} 
+\\ \hline
+\end{tabular}
+
+We match: $g(x,x)) = g(f(x), f(x)) $
+
+\begin{tabular}[]{|l|l|l|l|l|l|l|l|}
+\hline
+\c{$x$\\$f(x)$ \\ $f(f(x)) $\\$ g(x,x)$ \\ $ f(y) $\\$ g(f(x), f(x)) $} & 
+\c{$g(f(y), y) $\\$ g(f(y),f(y))$} &
+\c{$ g(x,g(x,y)) $\\$ g(y,x) $} &
+\c{$y$} & 
+\c{$g(x,y)$} 
+\\ \hline
+\end{tabular}
+
+We match: $g(x,x) = g(f(y), f(y)) $
+
+\begin{tabular}[]{|l|l|l|l|l|l|l|l|}
+\hline
+\c{$x$\\$f(x)$ \\ $f(f(x)) $\\$ g(x,x)$ \\ $ f(y) $\\$ g(f(x), f(x)) $ \\ $g(f(y), y) $\\$ g(f(y),f(y))$} &
+\c{$ g(x,g(x,y)) $\\$ g(y,x) $} &
+\c{$y$} & 
+\c{$g(x,y)$} 
+\\ \hline
+\end{tabular}
+
+No matter if we could merge again. In the end we need to return ``inconsistent'', because of a conflict:
+
+$g(x,x)$ and $g(f(y), y)$ are in the same equivalence class, but $g(x,x) \neq g(f(y), y)$ is part of the set of ground terms.
+\end{document}

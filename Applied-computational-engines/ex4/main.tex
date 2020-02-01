@@ -1,0 +1,130 @@
+\documentclass{base}
+% Dateikodierung ist utf8
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage[export]{adjustbox}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{color,colortbl}
+\usepackage{ulem}
+\usepackage{pdfpages}
+\usepackage{ wasysym }
+\usepackage{ booktabs }
+\usepackage{lscape}
+\usepackage{multicol}
+\usepackage{longtable}
+
+\begin{document}
+
+\Abgabeblatt{Assignment 4}{14.5.2018}{????}{????}{Yannis Rohloff (yannis@uni-bremen.de)}{Meng Liu(lium@uni-bremen.de)}{}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+}
+
+
+\section*{Exercise 1: Optimal Propagation}
+The following table lists all partial valuations that can be completed to be a fulfilling valuation for the given cnf.
+We list all variables that are obtainable from unit propagation with the partial valuation.
+The last column lists all variables that are implicated by the partial assignment but are not obtained by unit propagation.
+
+Our algorithm also prints all possible solutions for the given cnf. These are:
+\begin{lstlisting}
+[{1, 2, 3, 4, 5}, 
+ {1, 2, -5, -4, -3}, 
+ {1, 3, 5, -4, -2}, 
+ {1, -5, -4, -3, -2}, 
+ {2, 4, -5, -3, -1}, 
+ {2, -5, -4, -3, -1},
+ {3, 4, -2, -5, -1}, 
+ {3, -2, -5, -4, -1}, 
+ {4, -2, -5, -3, -1}, 
+ {-2, -5, -4, -3, -1}]
+\end{lstlisting}
+\input{table1.tex}
+
+From the table we obtain two partial valuations for which the cnf does not optmially propagate. ${x_1 = true, x_2=false}$ and ${x_2 = true, x_5=false}$.
+
+The following algorithm was used.
+
+First, we input the cnf and the amount of variables into \verb|optimal_table|.
+
+Then we compute all possible solutions of the cnf by brute forcing all complete valuations.
+We check if the cnf is fulfilled by substracting the set of variables (Example: \verb|variables = {1,2,-3,4,-5}|) of each cnf clause. If all the cnf clauses are empty by the end the cnf is fulfilled.
+
+After that we loop over all possible valuations. A partial valuation for 5 variables can be represented as the cross product $\{-1,0,1\}^{5}$. For example $(0,-1,0,0,1)$ means $\{x_2=false, x_5=true\}$
+In this loop we get all derived variables via recursive unit propagation. We then check for all supersets of our current partial valuations that are a solution to the cnf.
+If any variable is implicated by all these supersets but not gained from unit propagation the formula is not propagating optimally.
+
+Note: The code might be kind of hard to read since it uses may set operations like \verb|A - B|.
+
+
+\lstinputlisting{propagation.py}
+
+
+\section*{Exercise 2: Tseitin Encoding}
+
+We built our tesitin encoded formula this way:
+\begin{equation*} \label{eq1}
+\begin{split}
+    A &=\psi \land ((x\land z)\lor y)\land (((y\oplus a)\lor z)\oplus \neg y)\\
+    &= t_{1}\land (t_{1}\leftrightarrow (\psi \land((x\land z)\lor y)\land (((y\oplus a)\lor z)\oplus \neg y))\\
+    &= t_{1}\land (t_{1}\leftrightarrow (t_{2}\land \psi))\land(t_{2}\leftrightarrow(((x\land z)\lor y)\land(((y\oplus a)\lor z)\oplus \neg y))\\
+    &= t_{1}\land (t_{1}\leftrightarrow (t_{2}\land \psi))\land(t_{2}\leftrightarrow(t_{3}\land t_{4}))\land(t_{3}\leftrightarrow((x\land z)\lor y))\land(t_{4}\leftrightarrow(((y\oplus a)\lor z)\oplus \neg y))\\
+    &= t_{1}\land (t_{1}\leftrightarrow (t_{2}\land \psi))\land(t_{2}\leftrightarrow(t_{3}\land t_{4}))\land(t_{3}\leftrightarrow(t_{5}\lor y))\land(t_{5}\leftrightarrow(x\land z))\land(t_{4}\leftrightarrow(t_{6}\oplus \neg y))\\
+    &\land(t_{6}\leftrightarrow((y\oplus a)\lor z))\\
+    &= t_{1}\land (t_{1}\leftrightarrow (t_{2}\land \psi))\land(t_{2}\leftrightarrow(t_{3}\land t_{4}))\land(t_{3}\leftrightarrow(t_{5}\lor y))\land(t_{5}\leftrightarrow(x\land z))\land(t_{4}\leftrightarrow(t_{6}\oplus \neg y))\\
+    &\land(t_{6}\leftrightarrow(t_{7}\lor z))\land(t_{7}\leftrightarrow(y\oplus a))
+\end{split}
+\end{equation*}
+
+After transforming each sub formula into cnf clauses we get:
+\begin{align*}
+t_{1}&   &  \neg t_{3}\lor \neg &t_{4}\lor t_{2} &  t_{5}\lor y &\lor\neg t_{3} & \neg x\lor \neg &z\lor t_{5}\\
+\neg t_{2}\lor  \neg &\psi \lor t_{1}   &  t_{3}\lor &\neg t_{2}   & \neg t_{5}&\lor t_{3} & x\lor &\neg t_{5}\\
+t_{2}\lor &\neg t_{1}   &  t_{4}\lor &\neg t_{2} &  \neg y&\lor t_{3} & z\lor &\neg t_{5}\\
+\psi \lor &\neg t_{1}\\
+\\
+\neg t_{6}\lor y \lor & \neg t_{4} & t_{7}\lor z& \lor \neg t_{6} & \neg y \lor \neg &a \lor \neg t_{7}\\
+t_{6}\lor \neg y\lor &\neg t_{4} & \neg t_{7}&\lor t_{6} & y \lor a &\lor \neg t_{7}\\
+t_{6}\lor y& \lor t_{4} & \neg z&\lor t_{6} & y \lor \neg &a \lor t_{7}\\
+\neg t_{6}\lor \neg &y \lor t_{4} &    &     & \neg y \lor  &a \lor t_{7}
+\end{align*}
+
+Finally we can remove some clauses after performing the polarity check.
+\begin{align*}
+t_{1}&   &  \textcolor{red}{\neg t_{3}\lor \neg} &\textcolor{red}{t_{4}\lor t_{2}} &  t_{5}\lor y &\lor\neg t_{3} & \textcolor{red}{\neg x\lor \neg }&\textcolor{red}{z\lor t_{5}}\\
+\textcolor{red}{\neg t_{2}\lor  \neg }&\textcolor{red}{\psi \lor t_{1}}   &  t_{3}\lor &\neg t_{2}   & \textcolor{red}{\neg t_{5}}&\textcolor{red}{\lor t_{3}} & x\lor &\neg t_{5}\\
+t_{2}\lor &\neg t_{1}   &  t_{4}\lor &\neg t_{2} &  \textcolor{red}{\neg y}&\textcolor{red}{\lor t_{3}} & z\lor &\neg t_{5}\\
+\psi \lor &\neg t_{1}\\
+\\
+\neg t_{6}\lor y\lor & \neg t_{4} & t_{7}\lor z& \lor \neg t_{6} & \neg y \lor \neg &a \lor \neg t_{7}\\
+t_{6}\lor \neg y\lor& \neg t_{4} & \textcolor{red}{\neg t_{7}}&\textcolor{red}{\lor t_{6}} & y \lor a &\lor \neg t_{7}\\
+\textcolor{red}{t_{6}\lor y}& \textcolor{red}{\lor t_{4}} & \textcolor{red}{\neg z}&\textcolor{red}{\lor t_{6}} & \textcolor{red}{y \lor \neg} &\textcolor{red}{a \lor t_{7}}\\
+\textcolor{red}{\neg t_{6}\lor \neg} &\textcolor{red}{y \lor t_{4}} &    &     & \textcolor{red}{\neg y \lor}  &\textcolor{red}{a \lor t_{7}}
+\end{align*}
+Thus, we were able to reduce the overall number of clauses from 24 to 13.
+\end{document}

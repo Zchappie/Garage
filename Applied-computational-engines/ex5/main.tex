@@ -1,0 +1,96 @@
+\documentclass{base}
+% Dateikodierung ist utf8
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage[export]{adjustbox}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{color,colortbl}
+\usepackage{ulem}
+\usepackage{pdfpages}
+\usepackage{ wasysym }
+\usepackage{ booktabs }
+\usepackage{lscape}
+\usepackage{multicol}
+\usepackage{longtable}
+
+\begin{document}
+
+\Abgabeblatt{Assignment 5}{21.5.2018}{????}{????}{Yannis Rohloff (yannis@uni-bremen.de)}{Meng Liu(lium@uni-bremen.de)}{Islam Abushanab(is\_ab@uni-bremen.de)}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+}
+
+
+\section*{Exercise 1: }
+
+We already have $\phi$, which is a ladder encoding. We'll use that later.\\
+An encoded v is odd if for an odd i the variable $y_i$ is true but $y_{i-1}$ is not, since that would encode that $v=i$.
+To deny such valuations we set
+$$\psi_n = \bigwedge_{\substack{i \in \{0,\dots,n-1\} \\ i\text{ is odd}}}\ (\neg y_i \lor y_{i-1})$$
+Read it as: ``if an odd $y_i$ is true, its predecessor(s) must be true too.''
+
+\textbf{Consider n is even:} \\
+We know $|\psi_n| = \frac{n}{2}$. \\
+For example: In case $n=2$ we have 1 clause stating that if $y_1$ is true, $y_0$ must be true, too, which is correct, since otherwise $v=1$ and that is would be odd. \\
+We got both formulas via the observation shown in the task itself.
+
+\textbf{Consider n is odd:} \\
+We observe that $|\psi_n| = \frac{n-1}{2}$. \\
+
+So:
+$$f(n) = \begin{cases} 
+        \frac{n}{2} & \text{if n is even} \\
+        \frac{n-1}{2} & \text{if n is odd} \\
+    \end{cases}
+$$
+
+
+
+
+\section*{Exercise 2:}
+As we can see the clauses that we get from the constraint are:
+	\begin{equation}
+		\psi = \bigwedge\limits_{0\leq i \leq n-3} (\neg y_{i}\lor y_{i+1})
+	\end{equation}
+    If we know at least one of the assignment to a literal, we can perform unit propagation.
+    If we set $y_i=true$ we get from unit propagation, that all $y_j$ with $j>i$ are true too. So the increasing direction can entirely pe propagated. Looking in the other direction we start with the clause $(\neg y_{i-1} \lor y_i)$ if $i>0$.
+    This clause is already satisfied due to $y_i=true$, meaning $y_{i-1}$ can be either true or false.
+
+Setting $y_i=false$ reverses this analysis. All leading clauses and literals can be propagated but not the succesors of $y_i$, since $(y_i \lor y_{i+1})$ does not become a unit-clause.
+    
+As soon as we learn a pair of variables $y_i, y_{i+1}$ with $y_i=false$ and $y_{i+1}=true$ we can optimally propagate all other literals.
+
+
+
+
+
+
+
+
+
+\end{document}

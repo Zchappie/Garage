@@ -1,0 +1,84 @@
+\documentclass{base}
+% Dateikodierung ist utf8
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage[export]{adjustbox}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{color,colortbl}
+\usepackage{ulem}
+\usepackage{pdfpages}
+\usepackage{ wasysym }
+\usepackage{ booktabs }
+\usepackage{lscape}
+\usepackage{multicol}
+\usepackage{longtable}
+
+\begin{document}
+
+\Abgabeblatt{Assignment 5}{21.5.2018}{????}{????}{Yannis Rohloff (yannis@uni-bremen.de)}{Meng Liu(lium@uni-bremen.de)}{}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+}
+
+
+\section*{Exercise 1: }
+The idea about adding the clause is to make sure that if $y_{2i}$ is \textbf{false}, $y_{2i+1}$ cannot be \textbf{true}.
+	\begin{enumerate}
+		\item $n$ is even:
+		\begin{equation}
+			\bigwedge\limits_{0\leq i \leq \frac{n-2}{2}} (y_{2i}\lor \neg y_{2i+1})
+		\end{equation}
+		
+		\item $n$ is odd:
+		\begin{equation}
+			\bigwedge\limits_{0\leq i \leq \frac{n-3}{2}} (y_{2i}\lor \neg y_{2i+1})
+		\end{equation}
+	\end{enumerate}
+	The additional clauses will be:
+	\[ f(n) = 
+	\begin{cases} 
+	\frac{n}{2} & \text{if $n$ is even} \\
+	\frac{n-1}{2} & \text{if $n$ is odd}
+	\end{cases}
+	\]
+	
+	The $\varphi$ has $4n-1$ clauses, adding the new clauses above, the total will be:
+		\[ f(n) = 
+		\begin{cases} 
+		\frac{9n}{2} -1 & \text{if $n$ is even} \\
+		\frac{9n}{2} - \frac{3}{2} & \text{if $n$ is odd}
+		\end{cases}
+		\]
+
+\section*{Exercise 2:}
+As we can see from the clauses come from the constraint:
+	\begin{equation}
+		\psi = \bigwedge\limits_{0\leq i \leq n-3} (\neg y_{i}\lor y_{i+1})
+	\end{equation}
+If we know at least one of the assignment to a literal, after cross out all the satisfied clauses and falsified literals, the rest will be unit literal in a clause. In this case, the unit propagation can derive the value to all the variables.
+\end{document}

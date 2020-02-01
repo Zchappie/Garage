@@ -1,0 +1,6 @@
+Tests:          200
+Faster:         147
+Slower:         53
+Mistakes:       0
+Average UNSAT:  0.162 of 125 
+Average SAT:    0.145 of 75 

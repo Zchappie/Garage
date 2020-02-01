@@ -1,0 +1,107 @@
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Kassel-Frankfurt AND Hamm-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Stuttgart ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Stuttgart ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Stuttgart ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Erfurt-Nuremberg AND Nuremberg-Kassel ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Erfurt-Kassel AND Erfurt-Nuremberg AND Hamm-Frankfurt ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Erfurt-Kassel AND Nuremberg-Kassel ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Erfurt-Nuremberg AND Nuremberg-Kassel ENDCUT
+CUT Frankfurt-Stuttgart AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Stuttgart ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Nuremberg-Munich ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Erfurt-Nuremberg AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Hannover-Erfurt AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Nuremberg-Munich ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Stuttgart ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Kassel-Hamm AND Hamm-Frankfurt ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Erfurt-Kassel AND Nuremberg-Kassel AND Hamm-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Stuttgart ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Erfurt-Nuremberg AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Frankfurt-Stuttgart AND Stuttgart-Nuremberg AND Nuremberg-Munich AND Freiburg-Frankfurt ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Erfurt-Kassel AND Erfurt-Nuremberg AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Stuttgart ENDCUT
+CUT Kassel-Frankfurt AND Hamm-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Hannover-Erfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Nuremberg-Munich ENDCUT
+CUT Hannover-Erfurt AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Frankfurt-Stuttgart AND Stuttgart-Nuremberg AND Nuremberg-Munich AND Freiburg-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Kassel-Frankfurt AND Hamm-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Hannover-Erfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Erfurt-Kassel AND Nuremberg-Kassel AND Hamm-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Stuttgart ENDCUT
+CUT Erfurt-Nuremberg AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Nuremberg-Munich ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Erfurt-Kassel AND Erfurt-Nuremberg AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Hannover-Erfurt AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Hannover-Erfurt AND Erfurt-Kassel AND Nuremberg-Kassel ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Bremen-Hannover ENDCUT
+CUT Kassel-Frankfurt AND Hannover-Erfurt AND Erfurt-Kassel AND Nuremberg-Kassel AND Hamm-Frankfurt ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Erfurt-Kassel AND Nuremberg-Kassel AND Hamm-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Erfurt-Kassel AND Erfurt-Nuremberg AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Kassel-Frankfurt AND Hamm-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Nuremberg-Munich ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Hannover-Erfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Stuttgart ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Nuremberg-Munich ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Hannover-Erfurt AND Erfurt-Kassel AND Nuremberg-Kassel ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Bremen-Hannover ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Hannover-Kassel AND Kassel-Frankfurt AND Erfurt-Kassel AND Nuremberg-Kassel AND Hamm-Frankfurt ENDCUT
+CUT Freiburg-Stuttgart AND Freiburg-Frankfurt AND Freiburg-Munich ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Hannover-Erfurt AND Erfurt-Nuremberg AND Nuremberg-Kassel ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Erfurt-Nuremberg ENDCUT
+CUT Hannover-Erfurt AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Stuttgart ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Hannover-Erfurt ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Hannover-Kassel AND Hannover-Erfurt ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Hannover-Erfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Hannover-Erfurt AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Erfurt-Nuremberg ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Hannover-Erfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Hannover-Erfurt ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Kassel-Frankfurt AND Erfurt-Kassel AND Nuremberg-Kassel AND Hamm-Frankfurt ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Hannover-Erfurt AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Emden-Bremen AND Emden-Hamm ENDCUT
+CUT Hannover-Erfurt AND Erfurt-Kassel AND Erfurt-Nuremberg ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Nuremberg-Munich ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Erfurt-Nuremberg ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Hannover-Erfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Nuremberg-Munich ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Kassel-Frankfurt AND Erfurt-Kassel AND Nuremberg-Kassel AND Hamm-Frankfurt ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Hannover-Erfurt AND Erfurt-Kassel AND Nuremberg-Kassel ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Stuttgart ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Erfurt-Nuremberg AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Frankfurt-Stuttgart AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Frankfurt AND Freiburg-Munich ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Nuremberg-Munich ENDCUT
+CUT Kassel-Frankfurt AND Erfurt-Nuremberg AND Nuremberg-Kassel AND Hamm-Frankfurt ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Erfurt-Kassel AND Nuremberg-Kassel AND Hamm-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Nuremberg-Munich ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Erfurt-Nuremberg AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Erfurt-Kassel AND Erfurt-Nuremberg AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Nuremberg-Munich ENDCUT
+CUT Kassel-Frankfurt AND Hamm-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Hannover-Erfurt AND Hamm-Frankfurt ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Stuttgart ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Hamm-Frankfurt ENDCUT
+CUT Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Kassel-Frankfurt AND Hamm-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Erfurt-Kassel AND Nuremberg-Kassel AND Hamm-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Bremen-Hannover AND Hannover-Hamm AND Hannover-Kassel AND Erfurt-Kassel AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Nuremberg-Munich ENDCUT
+CUT Erfurt-Nuremberg AND Nuremberg-Kassel AND Frankfurt-Nuremberg AND Frankfurt-Stuttgart AND Nuremberg-Munich AND Munich-Stuttgart AND Freiburg-Stuttgart ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Erfurt-Kassel AND Erfurt-Nuremberg AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Stuttgart AND Freiburg-Frankfurt ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Emden-Bremen AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Kassel-Frankfurt AND Erfurt-Nuremberg AND Nuremberg-Kassel ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Erfurt-Kassel AND Nuremberg-Kassel AND Hamm-Frankfurt AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Munich ENDCUT
+CUT Emden-Hamm AND Bremen-Hamm AND Hannover-Hamm AND Kassel-Hamm AND Hamm-Frankfurt ENDCUT
+CUT Hannover-Kassel AND Kassel-Hamm AND Kassel-Frankfurt AND Erfurt-Kassel AND Erfurt-Nuremberg AND Frankfurt-Nuremberg AND Stuttgart-Nuremberg AND Munich-Stuttgart AND Freiburg-Munich ENDCUT
