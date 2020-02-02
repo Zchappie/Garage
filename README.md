@@ -6,3 +6,5 @@ All learning materials and implementations, served as a garage for potential use
 2. IN2354 3D Scanning and Motion Capture
 
 ## Assignments
+
+## Explorations
