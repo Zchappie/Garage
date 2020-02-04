@@ -1,6 +1,6 @@
 # Only clone the sub-folder of a repo from GitHub
 
-Check the original post here, [Cloning specific folders from git](http://scriptedonachip.com/git-sparse-checkout). Basically, it clones everything done, but prunes afterwards.
+Check the original post here, [Cloning specific folders from git](http://scriptedonachip.com/git-sparse-checkout). Basically, it clones everything down, but prunes afterwards.
 
 1. make a directory we want to copy folders to
 
