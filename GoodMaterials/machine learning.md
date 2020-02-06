@@ -13,5 +13,22 @@ First check the great post from Sebatiam Ruder, [An overview of gradient descent
 
 2. Gradient descent optimization algorithms address the challenges of GD variants. Easy to be trapped in saddle points; unflexible update for different features with different frequencies.
 
-    * **Momentum**: alleviate zig-zag behavior of SGD. But may rush at the minimum too fast to stop.
+    * **Momentum**: alleviates zig-zag behavior of SGD. But may rush at the minimum too fast to stop (overshot).
 
+    * **Adagrad**: adapts the learning rate to the parameters, performing smaller updates for parameters associated with frequently occurring features, and larger updates for parameters associated with infrequent features. It is well-suited for dealing with **sparse** data.
+
+    * **RMSprop and Adadelta**: take fixed number of previous momentums into gradient update. They address the problem of Adagrad, which is aggressive, monotonically decreasing learning rate.
+
+    * **Adam**: kind of combination of Momentum and RMSprop.
+
+3. [How to choose the optimizer?](https://ruder.io/optimizing-gradient-descent/#whichoptimizertouse)
+
+# Mistakes in Deep Learning project
+
+1. Check closely the existed functions before using them in the loss function, such as `MSE`.
+
+2. Think about image augmentation if the data is not enough.
+
+3. If data augmentation is not feasible, try to come up ways get more data, e.g. different ways of constructing triplets.
+
+4. [TQDM](https://tqdm.github.io) is a nice tool to show the progress by bar (percent).
