@@ -32,3 +32,7 @@ First check the great post from Sebatiam Ruder, [An overview of gradient descent
 3. If data augmentation is not feasible, try to come up ways get more data, e.g. different ways of constructing triplets.
 
 4. [TQDM](https://tqdm.github.io) is a nice tool to show the progress by bar (percent).
+
+# Summary of Lecture
+
+Check the website [CS 229 ― Machine Learning](https://stanford.edu/~shervine/teaching/cs-229/) for quick informations.
