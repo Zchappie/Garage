@@ -36,3 +36,7 @@ First check the great post from Sebatiam Ruder, [An overview of gradient descent
 # Summary of Lecture
 
 Check the website [CS 229 ― Machine Learning](https://stanford.edu/~shervine/teaching/cs-229/) for quick informations.
+
+# How to Train Neural Networks
+
+Check the website [A Recipe for Training Neural Networks](http://karpathy.github.io/2019/04/25/recipe/) for details.
