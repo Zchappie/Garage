@@ -3,4 +3,4 @@
 3. [Lec4 - Filtering and Edge Detection](./L4_filtering_and_Edge.md)
 
 
-Note, GitHub soen't support raw LaTex rendering.
+Note, GitHub doen't support raw LaTex rendering.
