@@ -32,7 +32,7 @@ Random Forest and Random Ferns can be found [here](http://vision.cse.psu.edu/sem
     **Prediction**:
     1. Apply the test image to a fern, get the binary code, then convert it to decimal.
     2. Extract all the probabilities from $P(F_0|C_k)$ with the same decimal.
-    3. Then normalize, and we get the probability of the test image belongs to each class. ![prediction by single fern](https://lh3.googleusercontent.com/proxy/ZbO96QMIs1ZyQPYLGC5T_GI_6k-TfeLdcE5oIB9GI7MtxAWtm39klzYI4JtWbrNTZHGbzdXf5RnnctnshmlCZG8rvBKswUIC0Nx6cDnGLkuECBOT1cnHNSQ)
+    3. Then normalize, and we get the probability of the test image belongs to each class. ![prediction by single fern](https://lh3.googleusercontent.com/proxy/Q43jTiMyBSHEJrKmzbWi4S9mZdepWGMzuJ2OQuleIG-p6GN1b8GJ-SvQNlUzCPNwJe1prnacoaeezWjDQcxmtGM_wJeZwXU8l-Hx0an0fKAGV5iJYcKX-Q0)
     4. Repeat the previous steps for all the ferns, and use (1) to get the final perdicted label. ![prediction from all ferns](https://pic4.zhimg.com/80/v2-51941fa7cdb784e41e3d2f2ec1c1bea3_hd.png)
 
 

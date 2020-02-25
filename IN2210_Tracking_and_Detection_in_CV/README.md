@@ -4,6 +4,7 @@
 4. [Lec5 - Detection of Features/Keypoints/Interest Points](./L5_feature.md)
 5. [Lec6 - Feature Descriptors](./L6_descriptor.md)
 6. [Lec7 - Keypoint Recognition](./L7_keypoint.md)
+7. [Lec9 - Object detection with ConvNets](./L9_convNets.md)
 
 
 Note, GitHub doen't support raw LaTex rendering.
