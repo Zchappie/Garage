@@ -15,6 +15,8 @@
     * $k_u$ and $k_v$ are set according to the shape of the pixel.
     * $u_0$ and $v_0$ are principle point coordinates, usually set as image center. 
     * Camera distortion has two cases in general: radial (important) + tangential. And the image is undistorted through a look-up table.
+    * The intrinsic matrix doesn't encode anything about the clipping region, so in theory cropping shouldn't affect the intrinsic parameters. However, usually when cropping, we also update the image origin to the corner of the new image, which requires the **change in the principal point offset**. The other parameters shouldn't change.
+    * For scaling case, we can think it as an **extra linear transformation** applied after camera projection, which you can achieve by left-multiplying the camera by $diag([s,s,1])$. The new camera will have all the parameters changed, including the axis skew if it is non-zero. The non-uniform scaling is the same, but the scaling constants in the x and y direction will differ, i.e. $diag([sx, sy, 1])$.
 
 3. The Full Homogeneous Transformation, from world coordinate to image 
     $$p_{hom} = PX = KP_0TX = \begin{bmatrix}
