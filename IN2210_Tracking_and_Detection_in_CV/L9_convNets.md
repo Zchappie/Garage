@@ -1,5 +1,7 @@
 # Object detection with ConvNets
 
+Before going further, just pause and check this [lecture notes](https://web.stanford.edu/class/cs294a/sparseAutoencoder.pdf) from Andrew Ng on Sparse autoencoder.
+
 Detection task: associate object class with **probability** to the **location** of the object(s) in the image. In general, there are two ways to tackle this problem:
 1. Using sliding window, generate multiple small image patches and feed them into the CNN to do the classification.
 2. Region Proposal + Classification approach
@@ -74,7 +76,23 @@ Here is a [blog](https://towardsdatascience.com/r-cnn-fast-r-cnn-faster-r-cnn-yo
 Again, check the [blog](https://lilianweng.github.io/lil-log/2018/12/27/object-detection-part-4.html). The main difference is this approach skips the region proposal stage and runs detection directly over a dense sampling of possible locations.
 
 1. YOLO
-   1. The [workflow](https://lilianweng.github.io/lil-log/2018/12/27/object-detection-part-4.html#workflow)
+   1. The [workflow](https://lilianweng.github.io/lil-log/2018/12/27/object-detection-part-4.html#workflow). Or check the video from Andrew Ng [video](https://www.youtube.com/watch?v=GSwYGkTfOKk&list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF&index=24&t=1s) C4W3L01 to C4W3L10
+   2. Important notes:
+      1. Output size:
+            $$C1 \times C2 \times A \times P$$
+            with
+           * $C1$: Horizontal numbers of grid cells 
+           * $C2$: Vertical numbers of grid cells 
+           * $A$: Number of anchors per cell
+           * $P$: Parameters, $[p_c, b_x, b_y, b_h, b_w, c_1, c_2, ..., c_n]$
+             * $P_c$: whether there is any object in the cell, if close to zero, then the rest parameters are ignored
+             * $b_x, b_y$ are bounding box center coordinate respected to the cell, normalized between $[0,1]$, $b_h, b_w$ could be larger than 1.
+             * $c_i$ is the class label
+        2. As we can see from the output size, the YOLO v1 can't handle cases like overlapping objects with similar shapes, or more objects are assigned to a cell than the anchor numbers.
+        3. Use the conv layers instead of fully connected layer to solve the computational problems brought by sliding windows.
+        4. Non-maximum suppression is done for each of the class.
+                
+2. SSD
 
-
+Check the [blog section](https://lilianweng.github.io/lil-log/2018/12/27/object-detection-part-4.html#ssd-single-shot-multibox-detector).
 ## Pitch - SSD6D
