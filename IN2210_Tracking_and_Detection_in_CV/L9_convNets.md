@@ -95,4 +95,7 @@ Again, check the [blog](https://lilianweng.github.io/lil-log/2018/12/27/object-d
 2. SSD
 
 Check the [blog section](https://lilianweng.github.io/lil-log/2018/12/27/object-detection-part-4.html#ssd-single-shot-multibox-detector).
-## Pitch - SSD6D
+
+## [Pitch - SSD6D](https://arxiv.org/pdf/1711.10006.pdf)
+
+Check the [pitch video](https://www.youtube.com/watch?v=YBwHZ8yOXfc)
