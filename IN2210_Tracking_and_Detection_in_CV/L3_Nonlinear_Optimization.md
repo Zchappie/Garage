@@ -109,3 +109,14 @@
 
     **Observations**: Solving the objective function with M-Estimator is equivalent to solve the weighted least-square problem. Thus, the gradient can be re-written as follows (LM case)
     $$\Delta_{i, LM} = -(J^TWJ + \lambda I)^{-1}J^TW \epsilon_i$$
+
+6. RANSAC
+   
+   RANSAC is also a way to deal with data with outliers. The process (from [Wikipedia](https://en.wikipedia.org/wiki/Random_sample_consensus)):
+   1. Select a random subset of the original data. Call this subset the hypothetical inliers.
+   2. A model is fitted to the set of hypothetical inliers.
+   3. All other data are then tested against the fitted model. Those points that fit the estimated model well, according to some model-specific loss function, are considered as part of the consensus set.
+   4. The estimated model is reasonably good if sufficiently many points have been classified as part of the consensus set.
+   5. Afterwards, the model may be improved by reestimating it using all members of the consensus set.
+
+    Last note, since RANSAC only provides a solution estimated with a limited number of data, it must be followed by a robust minimization to refine the solution.

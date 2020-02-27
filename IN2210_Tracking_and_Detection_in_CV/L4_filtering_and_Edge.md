@@ -52,7 +52,7 @@ Sum up this chapter with Canny Edge Detector.
 
     Edges gradients above some low threshold are considered to be above the threshold if they are also connected to edges above a higher. They can thus be seen as continuations of these high-confidence areas.
 
-In the previous sections, we only talked about the linear filters. Now, let's check the **non-linear filters**. This type of filter takes into account input pixel values before deciding how to use them in the output.
+In the previous sections, we only talked about the linear filters. Now, let's check the **non-linear filters**. This type of filter takes into account input pixel values before deciding how to use them in the output. While **linear filters** combine input pixels in a way that depends on where a pixel is in the image and not on its value.
 
 1. Median Filtering
 
