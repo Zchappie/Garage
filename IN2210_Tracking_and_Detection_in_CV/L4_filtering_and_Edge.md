@@ -11,7 +11,7 @@ Sum up this chapter with Canny Edge Detector.
 
 1. Image Smoothing
     
-    Image smoothing uses filters, and filters are operations based on neighborhood. Let's check first two simple filters, correlation and Convolution. They both are
+    Image smoothing uses filters, and filters are operations based on neighborhood. Let's check first two simple filters, correlation and convolution. They both are
     1. **Shift invariant** (operation independent from the location)
     2. **Linear** (result is linear combination of neighbors of central pixel)
     
@@ -19,9 +19,10 @@ Sum up this chapter with Canny Edge Detector.
     $$J(x,y) = H \circ I = \sum_{i=-1}^1\sum_{j=-1}^1H(i,j)I(x+i,y+j)$$
     $$J(x,y) = H \ast I = \sum_{i=-1}^1\sum_{j=-1}^1H(i,j)I(x-i,y-j) = \sum_{i=-1}^1\sum_{j=-1}^1H(x-i,y-j)I(i,j)$$
 
-    To interpret, applying a convolution on an image is equivalent to first rotating the conv kernel $180\degree$, then do a weighted sum of local region (as gifs in Deep Learning). Normally, the rotation is omitted as the kernel is center symmetric.
+    To interpret, applying a convolution on an image is equivalent to first rotating the conv kernel $180\degree$, then do a weighted sum of local region (as gifs in Deep Learning). 
     E.g.
     $$H\ast I = \begin{bmatrix}1 & -1\end{bmatrix} \quad \Leftrightarrow \quad H\cdot I =\begin{bmatrix}-1 & 1\end{bmatrix}\cdot \begin{bmatrix}I(x_0) & I(x_0+\Delta x)\end{bmatrix}^T$$
+    Normally, the rotation is omitted as the kernel is center symmetric. In fact, in deep learning implementations, the term *convolution* is misused, as the true operation is *correlation*. However, this doesn't effect the result as long as it has been used consistantly. Check the [corresponding documentation of Pytorch](https://pytorch.org/docs/stable/_modules/torch/nn/modules/conv.html).
 
     For image smoothing, the most common one is Gaussian smoothing.
     $$G(u,v) = e^{-\frac{1}{2} \frac{u^2 + v^2}{\sigma^2}} \Rightarrow G(u,v) =e^{-\frac{1}{2}(\frac{u}{\sigma})^2} e^{-\frac{1}{2}(\frac{v}{\sigma})^2}$$(1)
@@ -51,11 +52,15 @@ Sum up this chapter with Canny Edge Detector.
 
     Edges gradients above some low threshold are considered to be above the threshold if they are also connected to edges above a higher. They can thus be seen as continuations of these high-confidence areas.
 
-In the previous sections, we only talked about the linear filters. Now, let's check the **non-linear filters**. This tpye of filter takes into account input pixel values before deciding how to use them in the output.
+In the previous sections, we only talked about the linear filters. Now, let's check the **non-linear filters**. This type of filter takes into account input pixel values before deciding how to use them in the output.
 
 1. Median Filtering
 
     Median filters preserve the sharp edge, and it is particularly effictive when the noise pattern consists of strong spike-like components. However, for high levels of noise, its performance not that much better than Gaussian blur.
 2. Bilateral Filtering
 
-    It replaces the intensity of each pixel with a weighted average of intensity values from nearby pixels. This weight can be based on a Gaussian distribution (simply distance).
+    (From Wikipedia) *It replaces the intensity of each pixel with a **weighted average** of intensity values from **nearby** pixels. This weight can be based on a Gaussian distribution. Crucially, the weights depend not only on Euclidean distance of pixels, but also on the radiometric differences (e.g., range differences, such as color intensity, depth distance, etc.). This **preserves sharp edges**.*
+
+    The bilateral filter in its direct form can introduce several types of image **artifacts**:
+    * Staircase effect – intensity plateaus that lead to images appearing like cartoons
+    * Gradient reversal – introduction of false edges in the image.
