@@ -1,6 +1,6 @@
 # Object detection with ConvNets
 
-Before going further, just pause and check this [lecture notes](https://web.stanford.edu/class/cs294a/sparseAutoencoder.pdf) from Andrew Ng on Sparse autoencoder.
+Before going further, just pause  for awhile and check this [lecture notes](https://web.stanford.edu/class/cs294a/sparseAutoencoder.pdf) from Andrew Ng on Sparse autoencoder.
 
 Detection task: associate object class with **probability** to the **location** of the object(s) in the image. In general, there are two ways to tackle this problem:
 1. Using sliding window, generate multiple small image patches and feed them into the CNN to do the classification.
@@ -94,7 +94,7 @@ Again, check the [blog](https://lilianweng.github.io/lil-log/2018/12/27/object-d
                 
 2. SSD
 
-Check the [blog section](https://lilianweng.github.io/lil-log/2018/12/27/object-detection-part-4.html#ssd-single-shot-multibox-detector).
+    Check the [blog section](https://lilianweng.github.io/lil-log/2018/12/27/object-detection-part-4.html#ssd-single-shot-multibox-detector).
 
 ## [Pitch - SSD6D](https://arxiv.org/pdf/1711.10006.pdf)
 

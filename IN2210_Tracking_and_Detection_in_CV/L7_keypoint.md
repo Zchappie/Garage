@@ -38,14 +38,14 @@ Random Forest and Random Ferns can be found [here](http://vision.cse.psu.edu/sem
 
 3. Observations
 
-    1.  (Following words come from the [paper](https://www.epfl.ch/labs/cvlab/wp-content/uploads/2018/08/OzuysalCLF10.pdf), page 10) A tree can be transformed into a Fern by performing the following steps. First, we constrain the tree to systematically perform the same test across any given hierarchy level, which results in the same feature being evaluated independently of the path taken to get to a particular node. Second, we do away with the hiearchical structure and simply store the feature values at each level. This means applying a sequence of tests to the patch, which is what Ferns do. ![transform tree to fern](https://csdl-images.computer.org/trans/tp/2010/03/figures/ttp20100304484.gif)
+    1.  (Following words come from the [paper](https://www.epfl.ch/labs/cvlab/wp-content/uploads/2018/08/OzuysalCLF10.pdf), page 10) *A tree can be transformed into a Fern by performing the following steps. First, we constrain the tree to systematically perform the same test across any given hierarchy level, which results in the same feature being evaluated independently of the path taken to get to a particular node. Second, we do away with the hiearchical structure and simply store the feature values at each level. This means applying a sequence of tests to the patch, which is what Ferns do.* ![transform tree to fern](https://csdl-images.computer.org/trans/tp/2010/03/figures/ttp20100304484.gif)
     2. Some comparision
    
-        Random Forest | Random Ferns
-        --- | --- 
-        Directly learn the posterior| Learn the conditional probability 
-        The tests at every node is different | Same tests for single input
-        Exponentially time needed with tree depth grows | Linear time needed with ferns size grow
+     Random Forest | Random Ferns
+     --- | --- 
+     Directly learn the posterior| Learn the conditional probability 
+     The tests at every node is different | Same tests for single input
+     Exponentially time needed with tree depth grows | Linear time needed with ferns size grow
 
 4. BRIEF
    
