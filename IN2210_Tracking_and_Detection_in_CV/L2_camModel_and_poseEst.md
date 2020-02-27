@@ -30,7 +30,8 @@
     \end{bmatrix} \begin{bmatrix}
     r_{11} & r_{12} & r_{13} & t_1\\
     r_{21} & r_{22} & r_{23} & t_2\\
-    r_{31} & r_{32} & r_{33} & t_3
+    r_{31} & r_{32} & r_{33} & t_3\\
+    0&0&0&1
     \end{bmatrix} \begin{bmatrix}
         x \\ y \\ z \\ 1 
     \end{bmatrix}$$ (1)
