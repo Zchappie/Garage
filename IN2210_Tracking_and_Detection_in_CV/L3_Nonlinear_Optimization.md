@@ -98,7 +98,7 @@
       * uniform distribution for the outliers (large deviation)
       * Downside, as it is non-convex function, it will creates **local minima**, and gradient is close to zero when far from the global minimum. This problem is addressed by RANSAC. It's idea is to compute a set of pose from subsets of point pairs, then find the pose which majority agrees on. (I know what I meant here) 
     
-    To summarize, the type of estimator which **the objective function is a sample average called M-Estimator**. Found another definition here. *While the “M” indicates that M estimation is of the maximum likelihood type (Susanti et. al, 2013), M-estimators are actually a broad class of estimators that include the maximal likelihood estimator (Jureckova & Picek, 2005). Least squares estimators and LAV Estimators are also both special cases of M-estimation (Anderson, 2008).* check some types in the figure. 
+    To summarize, the type of estimator which **the objective function is a sample average called M-Estimator**. Found another definition here. *A generalization of the maximum-likelihood estimator (MLE).* *While the “M” indicates that M estimation is of the maximum likelihood type (Susanti et. al, 2013), M-estimators are actually a broad class of estimators that include the maximal likelihood estimator (Jureckova & Picek, 2005). Least squares estimators and LAV Estimators are also both special cases of M-estimation (Anderson, 2008).* check some types in the figure. 
     
     ![M-Estimators](https://www.researchgate.net/profile/Peter_Claes/publication/221810073/figure/fig2/AS:213903339462660@1428009938150/M-estimators-Different-M-estimators-left-column-and-their-outlier-influence-functions.png)
 
