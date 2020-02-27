@@ -14,7 +14,7 @@
     \end{bmatrix}$$ 
     * $k_u$ and $k_v$ are set according to the shape of the pixel.
     * $u_0$ and $v_0$ are principle point coordinates, usually set as image center. 
-    * Camera distortion has two cases in general: radial (important) + tangential. And the image is undistorted through a look-up table.
+    * Camera distortion has two cases in general: radial (important) + tangential. They are **non-linear** effects, thus cannot be modelled using matrix multiplication which allows linear (or affine in case of homogeneous coordinates) transformations only. And the image is undistorted through a look-up table.
     * The intrinsic matrix doesn't encode anything about the clipping region, so in theory cropping shouldn't affect the intrinsic parameters. However, usually when cropping, we also update the image origin to the corner of the new image, which requires the **change in the principal point offset**. The other parameters shouldn't change.
     * For scaling case, we can think it as an **extra linear transformation** applied after camera projection, which you can achieve by left-multiplying the camera by $diag([s,s,1])$. The new camera will have all the parameters changed, including the axis skew if it is non-zero. The non-uniform scaling is the same, but the scaling constants in the x and y direction will differ, i.e. $diag([sx, sy, 1])$.
 
@@ -52,6 +52,10 @@
     $$X = C + Q^{-1}m$$
 
 ## Extract Camera Pose
+
+ > The objective of camera calibration and pose estimation is to minimize the reprojection error:
+ > $$E(A, R, T) = \min_{A, R, T}\sum_i\lVert A(RM_i + T) -m_i \rVert_2^2$$
+
 1. DLT (Direct Linear Transformation) algorithm
    
    The goal of DLT algorithm is estimating the position and orientation of camera from 2D/3D point pairs when the camera intrinsics are unknown.

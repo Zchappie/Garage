@@ -51,6 +51,8 @@
         Then rotate a point $p$ to $p'$ can be written as
         $$p' = q_{Quat}\cdot p \cdot \overline{q_{Quat}}$$
         with $\overline{q_{Quat}} = (\cos\frac{\theta}{2}, -\frac{q}{\theta}\sin\frac{\theta}{2})$
+    * To approximate/linearize the infinitesimal rotations, the following can be used
+        $$R \approx I + [v]_{\times}$$
 
 4. Computing Jacobian
     
