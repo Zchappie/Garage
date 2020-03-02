@@ -1,8 +1,5 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        """
-        Idea, a seed can be a single letter, or double letters.
-        """
         if s == '':
             return ''
         longest = s[0]
@@ -28,6 +25,28 @@ class Solution:
             if len(subs)>len(longest):
                 longest = subs
         return longest
+
+
+    """
+    Difference: separate the 'aba' and 'aa' cases.
+    """
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        longest = s[0]
+        for i in range(len(s)):
+            # for odd and even cases
+            longest = max(self.helper(s,i,i), self.helper(s,i,i+1), longest, key=len)
+
+        return longest
+           
+    def helper(self,s,l,r):
+        while 0<=l and r < len(s) and s[l]==s[r]:
+            l-=1
+            r+=1
+        return s[l+1:r]
 
 s = Solution()
 print(s.longestPalindrome("aabbccddccbba"))
