@@ -27,6 +27,15 @@ class Solution:
 
         return level-1
 
+    """
+    As always, some one-line shxt.
+    Use recursive.
+    """
+    def maxDepth(self, root: TreeNode) -> int:
+        if not root:
+            return 0
+        return 1+max(self.maxDepth(root.left),self.maxDepth(root.right))
+
 n1 = TreeNode(1)
 n2 = TreeNode(2)
 n3 = TreeNode(2)
@@ -35,13 +44,13 @@ n5 = TreeNode(3)
 n6 = TreeNode(None)
 n7 = TreeNode(3)
 
-# n1.left = n2
-# n1.right = n3
-# n2.left = n4
-# n2.right = n5
-# n3.left = n6
-# n3.right = n7
+n1.left = n2
+n1.right = n3
+n2.left = n4
+n2.right = n5
+n3.left = n6
+n3.right = n7
 x = None
 
 s = Solution()
-print(s.maxDepth(x))      
+print(s.maxDepth(n1))      
