@@ -11,11 +11,11 @@
 
 1. What is Product Development?
     
+    * A **design** is a description of an artefact to be made.
     * **Products**: designed artefacts by humans. 
     * MPD methods applicable to **all** products.
     * Design ends where making (in terms of production) starts.
-    * A **design problem** is a design task with a more or less specified design goal.
-    * A **solution** (to a design problem) or a **good design** is a design reaching its design goal.
+    * A **design problem** is a design task with a more or less specified design goal. A **solution** (to a design problem) or a **good design** is a design reaching its design goal. Problems and solutions have a dynamic relationship. As the **interpretation** of the problem may depend on the designer. The solution might be **difficult** to find or even lies outside the stated problem space making it impossible to identify. Or even more than one solution of different values.
     * The key challenges of designing are:
       * Understanding the problem
       * Asking the right questions
@@ -25,27 +25,34 @@
 
    1. Market-related Challenges
 
-        External influence, e.g Technology, Competition, Customers, Product, Politics, etc. All these can be **VUCA**.
+        External influence, e.g Technology, Competition, Customers, Product, Politics, etc. All these factors can be **VUCA**.
         * Volatility = characterized by or subject to **rapid** or unexpected change.
         * Uncertainty = the state of being **not clearly** identified or defined.
         * Complexity = characterises the behavior of a system or model whose components interact in **multiple** ways and follow local rules, meaning there is no reasonable higher instruction to define the various possible interactions.
         * Ambiguity = the quality of being open to **more than one interpretation**; inexactness
-   2. Designer-related Challenges
+   2. Design-related Challenges
         * Many dependencies, variants
         * Counter-intuitive dependencies, nonlinearities
         * Solution Spaces within a Large Design Space
-   3. Design-related Challenges
+   3. Designer-related Challenges
 
-        * Humans as individuals: how to generate good ideas, limited intellectual capacity
-        * Humans in groups: team dynamics
+        * Humans as individuals: how to generate good ideas, **limited intellectual capacity**, such as dealing with complexity, dynamic systems, extrapolation of non-linear correlations, etc.
+        * Humans in groups: team dynamics (different personalities in a team). Team size: 4~8. If too small, the team will miss interdisciplinary and error detection ability; however, too large will lead to inefficiency. 
         * Groups of groups
-    4. Combined challenges
+    1. Combined challenges
         
-        * Uncertainty
-        * The dilemma of product development
-1. III-designed Products
-2. Design!
-3. Keywords
+        * Uncertainty: difficulty to satisfy requirements, conflicting requirements, etc.
+        * The dilemma of product development: at the very beginning, usually little information is acquired, and lots of possibilities; however, in the end, fewer possibilities are available but come with abundant information. **The more you know, the less you can do.**
+    
+    How to overcome all those challenges? Use Models and methods.
+3. III-designed Products
+   
+   Examples: USB, Mac type-c connector.
+4. Keywords
+   * A **model** is a simplified description of reality. Thus, it is a form of abstraction of reality. It helps to understand complexity and to deal with the limitations of the human mind.
+   * **Method**: is a more detailed view which describes **how** to do something by action items. Operation-oriented.
+   * **Procedure Model**: is a more global view which describes **what** to do by results. More result-oriented.
+   * "Its color (variable) is gray (value)."
 
 
 ![mpd-overview](./figures/mpd_overview.png)
