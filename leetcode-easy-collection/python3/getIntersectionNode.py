@@ -13,8 +13,8 @@ class Solution:
         b = headB
 
         while a != b:
-            p_A = p_A.next if p_A != None else headB
-            p_B = p_B.next if p_B != None else headA
+            a = a.next if a != None else headB
+            b = b.next if b != None else headA
         return a
 
 
