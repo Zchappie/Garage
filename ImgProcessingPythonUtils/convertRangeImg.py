@@ -54,6 +54,9 @@ def moveColorImgsToAnotherFolder(sourceFolder, targetFolder):
         if len(img.shape) == 3:
             shutil.move(filePath, targetFolder)
 
+# copy files to another folder
+def copyFilesToFolder(courceFolder, targetFolder):
+    pass
 
 # new function to calculate the pixel value, 40% near 0, then throw away.
 def findPossibleValidRangeFiles(sourceFolder, targetFolder):
