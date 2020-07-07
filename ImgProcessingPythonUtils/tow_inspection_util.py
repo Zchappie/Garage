@@ -3,11 +3,11 @@ import cv2
 import os
 import sys
 from PIL import Image
-# import png
 from matplotlib import pyplot as plt
 import matplotlib.lines as mlines
 from scipy.optimize import curve_fit
 from scipy.signal import savgol_filter
+
 
 def plotImage(img, edges = None):
     # plot the image with edges or only image
